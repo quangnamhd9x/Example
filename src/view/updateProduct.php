@@ -23,9 +23,13 @@
     }
 </style>
 <body>
+<br><br><br>
 <form method="POST" enctype="multipart/form-data">
     <table align="center" class="table" style="width: auto; border-radius: 15px">
         <thead class="thead-dark">
+        <tr>
+            <th colspan="2"><h1><b>Chỉnh sửa mặt hàng</b></h1></th>
+        </tr>
         <tr>
             <td>Tên hàng</td>
             <td><input style="width: 280px" name="name" type="text" required value="<?php echo $product["name"]; ?>"></td>
@@ -34,7 +38,20 @@
             <td>Loại hàng</td>
             <td><input style="width: 280px" name="type" type="text" required value="<?php echo $product["type"]; ?>"></td>
         </tr>
-
+        </tr>
+        <tr>
+            <td>Giá</td>
+            <td><input name="price" style="width: 280px" type="text" required value="<?php echo $product["price"]; ?>"></td>
+        </tr>
+        <tr>
+            <td>Số lượng</td>
+            <td><input name="count" style="width: 280px" type="text" required value="<?php echo $product["count"]; ?>"></td>
+        </tr>
+        <tr>
+            <td>Mô tả</td>
+            <td><input name="note" style="width: 280px" type="text" required value="<?php echo $product["note"]; ?>"></td>
+        </tr>
+        <tr>
         <tr>
             <td></td>
             <td>

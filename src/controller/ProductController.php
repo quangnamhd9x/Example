@@ -28,10 +28,10 @@ class ProductController
             $name = $_POST["name"];
             $type = $_POST["type"];
             $price = $_POST["price"];
-            $count = $_POST["type"];
-            $date = $_POST["type"];
-            $note = $_POST["type"];
-            $product = new Product($name, $type, $price, $count, $date, $note);
+            $count = $_POST["count"];
+//            $date = $_POST["date"];
+            $note = $_POST["note"];
+            $product = new Product($name, $type, $price, $count, $note);
             $this->productController->addProduct($product);
             header("location:index.php");
         }
@@ -54,7 +54,10 @@ class ProductController
             $id = $_REQUEST['id'];
             $name = $_REQUEST['name'];
             $type = $_REQUEST['type'];
-            $product = new Product($name, $type);
+            $price = $_REQUEST['price'];
+            $count = $_REQUEST['count'];
+            $note = $_REQUEST['note'];
+            $product = new Product($name, $type, $price, $count, $note);
             $product->setId($id);
             $this->productController->updateProduct($product);
             header('location:index.php');

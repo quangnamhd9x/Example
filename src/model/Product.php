@@ -14,6 +14,15 @@ class Product
     protected $date;
     protected $note;
 
+    public function __construct($name, $type, $price, $count, $note)
+    {
+        $this->name = $name;
+        $this->type = $type;
+        $this->price = $price;
+        $this->count = $count;
+        $this->date = date("yy/m/d");
+        $this->note = $note;
+    }
     /**
      * @return mixed
      */
@@ -75,16 +84,6 @@ class Product
      */
     public function setNote($note)
     {
-        $this->note = $note;
-    }
-
-    public function __construct($name, $type, $price, $count, $date, $note)
-    {
-        $this->name = $name;
-        $this->type = $type;
-        $this->price = $price;
-        $this->count = $count;
-        $this->date = $date;
         $this->note = $note;
     }
 

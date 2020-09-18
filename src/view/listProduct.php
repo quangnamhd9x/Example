@@ -46,7 +46,7 @@ include_once "src/controller/ProductController.php";
                       action="index.php?page=showInfo">
                     <input name="search" class="form-control" type="search"
                            aria-label="Search">
-                    <button style="background-color: lightskyblue" class="btn btn-success" type="submit">Tìm kiếm</button>
+                    <button style="background-color: black" class="btn btn-success" type="submit">Tìm kiếm</button>
                 </form>
             </th>
             <th>

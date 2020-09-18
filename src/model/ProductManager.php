@@ -21,7 +21,7 @@ class ProductManager
         $result = $stmt->fetchAll();
         $array = [];
         foreach ($result as $items) {
-            $product = new Product($items["name"], $items["type"], $items["price"], $items["count"], $items["date"], $items["note"]);
+            $product = new Product($items["name"], $items["type"], $items["price"], $items["count"], $items["note"]);
             $product->setId($items["id"]);
             array_push($array, $product);
         }
@@ -64,11 +64,16 @@ class ProductManager
     {
         {
 
-            $sql = "UPDATE `products` SET `name`=:name,`type`=:type WHERE id = :id";
+            $sql = "UPDATE `products` SET `name`=:name,`type`=:type,
+`price`=:price,`count`=:count,`date`=:date,`note`= :note WHERE id = :id";
             $stmt = $this->database->prepare($sql);
             $stmt->bindParam(":id", $product->getId());
             $stmt->bindParam(":name", $product->getName());
             $stmt->bindParam(":type", $product->getType());
+            $stmt->bindParam(":price", $product->getPrice());
+            $stmt->bindParam(":count", $product->getCount());
+            $stmt->bindParam(":date", $product->getDate());
+            $stmt->bindParam(":note", $product->getNote());
             $stmt->execute();
         }
     }
@@ -83,7 +88,7 @@ WHERE name LIKE :key";
         $data = $stmt->fetchAll();
         $arr = [];
         foreach ($data as $item) {
-            $info = new Product($item['name'], $item['type']);
+            $info = new Product($item['name'], $item['type'], $item['price'], $item['count'], $item['note']);
             $info->setId($item['id']);
             array_push($arr, $info);
         }
