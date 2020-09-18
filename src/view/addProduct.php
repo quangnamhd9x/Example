@@ -11,7 +11,7 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <style>
     body {
-       background-color: lightskyblue;
+        background-color: lightskyblue;
     }
 
     .table {
@@ -71,7 +71,9 @@
             <td><textarea name="note" style="width: 280px" type="text" required></textarea></td>
         </tr>
         <tr>
-            <td></td>
+            <td>
+                <a class="btn btn-warning" href="http://localhost/Example/index.php">Trở về</a>
+            </td>
             <td>
                 <button style="width: 200px" class="btn btn-success" type="submit">Thêm</button>
             </td>
