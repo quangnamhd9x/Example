@@ -62,7 +62,7 @@ include_once "src/controller/ProductController.php";
         <th scope="col">#</th>
         <th scope="col">Tên hàng</th>
         <th scope="col">Loại hàng</th>
-        <th colspan="2" scope="col">Tùy chọn</th>
+        <th style="width: 300px" colspan="1" scope="col">Tùy chọn</th>
     </tr>
     </thead>
     <tbody>
@@ -71,11 +71,9 @@ include_once "src/controller/ProductController.php";
             <td><?php echo ++$key; ?></td>
             <td><?php echo $product->getName(); ?></td>
             <td><?php echo $product->getType(); ?></td>
-            <td>
-                <a class="btn btn-info" href="index.php?page=update&id=<?php echo $product->getId(); ?>">Chỉnh sửa</a>
-            </td>
-            <td>
-                <a class="btn btn-danger" onclick="return confirm('Bạn chắc chứ?')"
+            <td style="text-align: center">
+                <a style="width: 100px" class="btn btn-info" href="index.php?page=update&id=<?php echo $product->getId(); ?>">Chỉnh sửa</a>
+                <a style="width: 80px" class="btn btn-danger" onclick="return confirm('Bạn chắc chứ?')"
                    href="index.php?page=delete&id=<?php echo $product->getId(); ?>">Xóa</a>
             </td>
         </tr>
